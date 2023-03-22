@@ -18,6 +18,18 @@ app.use(cors({credentials:true,origin:['http://localhost:3000','https://blogwebs
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads',express.static(__dirname+'/uploads'));
+app.use(function (req, res, next) {
+   
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Max-Age", "1800");
+    res.header("Access-Control-Allow-Headers", "content-type");
+    res.header(
+      "Access-Control-Allow-Methods",
+      "PUT, POST, GET, DELETE, PATCH, OPTIONS"
+    );
+    next();
+  });
 
 mongoose.connect('mongodb+srv://blog:taRJiV4dnr1dQBRq@cluster0.cupxg0j.mongodb.net/?retryWrites=true&w=majority');
 
