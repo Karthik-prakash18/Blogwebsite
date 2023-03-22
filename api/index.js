@@ -148,7 +148,7 @@ app.get('/post/:id', async (req, res) => {
     res.json(postDoc);
 });
 
-app.listen(4000);
+app.listen(process.env.PORT||4000);
 
 // mongodb+srv://blog:taRJiV4dnr1dQBRq@cluster0.cupxg0j.mongodb.net/?retryWrites=true&w=majority
 
