@@ -34,7 +34,8 @@ export default function PostPage(){
                 </div>
             )}
             <div className="image">
-            <img src={`https://shy-pear-nematode-tie.cyclic.app/${postInfo.cover}`} alt="" />
+            {/* <img src={`https://shy-pear-nematode-tie.cyclic.app/${postInfo.cover}`} alt="" /> */}
+            <img src={postInfo.cover} alt="" />
             </div>
             
             <div className="content" dangerouslySetInnerHTML={{__html: postInfo.content}} />

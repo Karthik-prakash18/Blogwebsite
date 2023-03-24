@@ -27,13 +27,15 @@ export default function CreatePost(){
     const [content,setContent]=useState('');
     const [files,setFiles]=useState('');
     const [redirect,setRedirect]=useState(false);
+    const [cover,setCover]=useState('');
 
     async function createNewPost(ev){
         const data=new FormData();
         data.set('title',title);
         data.set('summary',summary);
         data.set('content',content);
-        data.set('file',files[0]);
+        // data.set('file',files[0]);
+        data.set('cover',cover);
         ev.preventDefault();
         const response=await fetch('https://shy-pear-nematode-tie.cyclic.app/post' , {
             method: 'POST',
@@ -52,7 +54,8 @@ export default function CreatePost(){
         <form onSubmit={createNewPost}>
             <input type='title' placeholder='title' value={title} onChange={ev=>setTitle(ev.target.value)} />
             <input type='summary' placeholder='summary' value={summary} onChange={ev=>setSummary(ev.target.value)}/>
-            <input type='file' onChange={ev=>setFiles(ev.target.files)} />
+            {/* <input type='file' onChange={ev=>setFiles(ev.target.files)} /> */}
+            <input type='text' placeholder='image url' value={cover} onChange={ev=>setCover(ev.target.value)} />
             {/* <ReactQuill value={content} onChange={newValue=>setContent(newValue)} modules={modules} formats={formats} /> */}
             <Editor value={content} onChange={setContent} />
             <button style={{marginTop:'5px'}}>Create Post</button>

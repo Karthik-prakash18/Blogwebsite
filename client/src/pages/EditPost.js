@@ -29,9 +29,13 @@ export default function EditPost(){
         data.set('summary',summary);
         data.set('content',content);
         data.set('id',id);
-        if(files?.[0]){
-            data.set('file',files?.[0]);
+        // data.set('cover',cover);
+        if(cover.length>0){
+            data.set('cover',cover);
         }
+        // if(files?.[0]){
+        //     data.set('file',files?.[0]);
+        // }
         
 
         const response = await fetch('https://shy-pear-nematode-tie.cyclic.app/post',{
@@ -55,7 +59,8 @@ export default function EditPost(){
         <form onSubmit={updatePost}>
             <input type='title' placeholder='title' value={title} onChange={ev=>setTitle(ev.target.value)} />
             <input type='summary' placeholder='summary' value={summary} onChange={ev=>setSummary(ev.target.value)}/>
-            <input type='file' onChange={ev=>setFiles(ev.target.files)} />
+            {/* <input type='file' onChange={ev=>setFiles(ev.target.files)} /> */}
+            <input type='text' placeholder='image url' value={cover} onChange={ev=>setCover(ev.target.value)} />
             <Editor onChange={setContent} value={content} />
             <button style={{marginTop:'5px'}}>Update Post</button>
         </form>
