@@ -4,7 +4,7 @@ import { UserContext } from "./UserContext";
 export default function Header(){
   const {setUserInfo,userInfo} = useContext(UserContext);
   useEffect(()=>{
-    fetch('https://blogwebsite-7hh2.vercel.app/profile',{
+    fetch('https://shy-pear-nematode-tie.cyclic.app/profile',{
       credentials:'include',
     }).then(response => {
       response.json().then(userInfo=>{
@@ -14,7 +14,7 @@ export default function Header(){
   },[]);
 
   function logout(){
-    fetch('https://blogwebsite-7hh2.vercel.app/logout',{
+    fetch('https://shy-pear-nematode-tie.cyclic.app/logout',{
         credentials:'include',
         method:'POST',
     });

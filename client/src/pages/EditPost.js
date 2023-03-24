@@ -13,7 +13,7 @@ export default function EditPost(){
     const [redirect,setRedirect]=useState(false);
 
     useEffect(()=>{
-        fetch('https://blogwebsite-7hh2.vercel.app/post/'+id).then(response =>{
+        fetch('https://shy-pear-nematode-tie.cyclic.app/post/'+id).then(response =>{
             response.json().then(postInfo => {
                 setTitle(postInfo.title);
                 setContent(postInfo.content);
@@ -34,7 +34,7 @@ export default function EditPost(){
         }
         
 
-        const response = await fetch('https://blogwebsite-7hh2.vercel.app/post',{
+        const response = await fetch('https://shy-pear-nematode-tie.cyclic.app/post',{
             method:'PUT',
             body:data,
             credentials:'include',

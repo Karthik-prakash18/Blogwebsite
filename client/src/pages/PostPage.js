@@ -8,7 +8,7 @@ export default function PostPage(){
     const {userInfo} = useContext(UserContext);
     const {id} = useParams();
     useEffect(()=>{
-        fetch(`https://blogwebsite-7hh2.vercel.app/post/${id}`)
+        fetch(`https://shy-pear-nematode-tie.cyclic.app/post/${id}`)
         .then(response => {
             response.json().then(postInfo => {
                 setPostInfo(postInfo);
@@ -34,7 +34,7 @@ export default function PostPage(){
                 </div>
             )}
             <div className="image">
-            <img src={`https://blogwebsite-7hh2.vercel.app/${postInfo.cover}`} alt="" />
+            <img src={`https://shy-pear-nematode-tie.cyclic.app/${postInfo.cover}`} alt="" />
             </div>
             
             <div className="content" dangerouslySetInnerHTML={{__html: postInfo.content}} />

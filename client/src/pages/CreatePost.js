@@ -35,7 +35,7 @@ export default function CreatePost(){
         data.set('content',content);
         data.set('file',files[0]);
         ev.preventDefault();
-        const response=await fetch('https://blogwebsite-7hh2.vercel.app/post' , {
+        const response=await fetch('https://shy-pear-nematode-tie.cyclic.app/post' , {
             method: 'POST',
             body: data, 
             credentials:'include',
